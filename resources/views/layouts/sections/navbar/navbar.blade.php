@@ -5,7 +5,7 @@ $navbarDetached = ($navbarDetached ?? '');
 @endphp
 
 <!-- Navbar -->
-@if(isset($navbarDetached) && $navbarDetached == 'navbar-detached')
+{{-- @if(isset($navbarDetached) && $navbarDetached == 'navbar-detached')
 <nav class="layout-navbar {{$containerNav}} navbar navbar-expand-xl {{$navbarDetached}} align-items-center bg-navbar-theme" id="layout-navbar">
   @endif
   @if(isset($navbarDetached) && $navbarDetached == '')
@@ -113,5 +113,5 @@ $navbarDetached = ($navbarDetached ?? '');
       @if(!isset($navbarDetached))
     </div>
     @endif
-  </nav>
+  </nav> --}}
   <!-- / Navbar -->
