@@ -23,7 +23,7 @@
                     <div class="col-sm-7">
                         <div class="card-body">
                             <h5 class="card-title text-primary">Hello, Nia Maimunah. Welcome to Fin X Plan Dashboard 🎉</h5>
-                            <p class="mb-4">You have done <span class="fw-medium">33%</span> more sales today.</p>
+                            <p class="mb-4"> You have done <span id="main_profit" class="fw-medium">33%</span> more sales this week.</p>
 
                             {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a> --}}
                         </div>
@@ -33,60 +33,6 @@
                             <img src="{{ asset('assets/img/illustrations/man-with-laptop-light.png') }}" height="140"
                                 alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                 data-app-light-img="illustrations/man-with-laptop-light.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 order-1">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets/img/icons/unicons/chart-success.png') }}" alt="chart success"
-                                        class="rounded">
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fw-semibold d-block mb-1">Profit</span>
-                            <h3 class="card-title mb-2">RM 12,628</h3>
-                            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +72.80%</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets/img/icons/unicons/wallet-info.png') }}" alt="Credit Card"
-                                        class="rounded">
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>Sales</span>
-                            <h3 class="card-title text-nowrap mb-1">RM 4,679</h3>
-                            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +28.42%</small>
                         </div>
                     </div>
                 </div>
@@ -118,18 +64,14 @@
                             </div>
                         </div>
                         <div id="growthChart"></div>
-                        <div class="text-center fw-medium pt-3 mb-2">33% Company Growth</div>
+                        <div id="company_growth" class="text-center fw-medium pt-3 mb-2">Company Growth</div>
 
                         <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
                             <div class="d-flex">
-                                <div class="me-2">
-                                    <span class="badge bg-label-primary p-2"><i
-                                            class="bx bx-dollar text-primary"></i></span>
-                                </div>
-                                <div class="d-flex flex-column">
+                                {{-- <div class="d-flex flex-column">
                                     <small>2024 (current)</small>
                                     <h6 class="mb-0">5,344,589 RM</h6>
-                                </div>
+                                </div> --}}
                             </div>
                             {{-- <div class="d-flex">
               <div class="me-2">
@@ -154,9 +96,9 @@
             </div>
         </div>
         <!--/ Total Revenue -->
-        <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+        <div class="col-12 col-lg-4 order-3 order-md-2">
             <div class="row">
-                <div class="col-6 mb-4">
+                <div class="col-12 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -164,7 +106,7 @@
                                     <img src="{{ asset('assets/img/icons/unicons/paypal.png') }}" alt="Credit Card"
                                         class="rounded">
                                 </div>
-                                <div class="dropdown">
+                                {{-- <div class="dropdown">
                                     <button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
@@ -173,41 +115,18 @@
                                         <a class="dropdown-item" href="javascript:void(0);">View More</a>
                                         <a class="dropdown-item" href="javascript:void(0);">Delete</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <span class="d-block mb-1">Payments</span>
-                            <h3 class="card-title text-nowrap mb-2">RM 2,456</h3>
-                            <small class="text-danger fw-medium"><i class='bx bx-down-arrow-alt'></i> -14.82%</small>
+                            <h3 id="payment_value" class="card-title text-nowrap mb-2">RM 2,456</h3>
+                            <small id="payment_percentage" class="text-success fw-medium"><i
+                                    class='bx bx-down-arrow-alt'></i> -14.82%</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets/img/icons/unicons/cc-primary.png') }}" alt="Credit Card"
-                                        class="rounded">
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fw-semibold d-block mb-1">Transactions</span>
-                            <h3 class="card-title mb-2">RM 14,857</h3>
-                            <small class="text-success fw-semibold"><i class='bx bx-up-arrow-alt'></i> +28.14%</small>
-                        </div>
-                    </div>
-                </div>
+  
                 <!-- </div>
-                                                <div class="row"> -->
+                                                                            <div class="row"> -->
                 <div class="col-12 mb-4">
                     <div class="card">
                         <div class="card-body">
@@ -215,12 +134,13 @@
                                 <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                     <div class="card-title">
                                         <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                        <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                                        <span class="badge bg-label-warning rounded-pill">Year 2024</span>
                                     </div>
                                     <div class="mt-sm-auto">
-                                        <small class="text-success text-nowrap fw-medium"><i class='bx bx-chevron-up'></i>
+                                        <small id="profile_report_percentage"
+                                            class="text-success text-nowrap fw-medium"><i class='bx bx-chevron-up'></i>
                                             68.2%</small>
-                                        <h3 class="mb-0">RM 84,686k</h3>
+                                        <h3 id="profile_report_value" class="mb-0">RM 84,686k</h3>
                                     </div>
                                 </div>
                                 <div id="profileReportChart"></div>
@@ -440,6 +360,14 @@
                         </li>
                     </ul>
                 </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12 mb-4 d-flex justify-content-center align-items-center">
+                        <a href="https://mytax.hasil.gov.my/" target="_blank"><button type="button"
+                                class="btn btn-primary" data-bs-toggle="modal">
+                                Pay Tax
+                            </button></a>
+                    </div>
+                </div>
             </div>
         </div>
         <!--/ Transactions -->
@@ -457,27 +385,27 @@
                     <form id="submitForm">
                         {{-- <h3>Please give a simulation of 5 months ahead:</h3> --}}
                         <div class="mb-3">
-                            <label for="inputJanuary" class="form-label">January (RM)</label>
+                            <label for="inputJanuary" class="form-label">Monday (RM)</label>
                             <input type="text" class="form-control" id="inputJanuary" name="inputJanuary"
                                 placeholder="200.000" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputFebruary" class="form-label">February (RM)</label>
+                            <label for="inputFebruary" class="form-label">Tuesday (RM)</label>
                             <input type="text" class="form-control" id="inputFebruary" name="inputFebruary"
                                 placeholder="200.000" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputMarch" class="form-label">March (RM)</label>
+                            <label for="inputMarch" class="form-label">Wednesday (RM)</label>
                             <input type="text" class="form-control" id="inputMarch" name="inputMarch"
                                 placeholder="200.000" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputApril" class="form-label">April (RM)</label>
+                            <label for="inputApril" class="form-label">Thursday (RM)</label>
                             <input type="text" class="form-control" id="inputApril" name="inputApril"
                                 placeholder="200.000" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputMay" class="form-label">May (RM)</label>
+                            <label for="inputMay" class="form-label">Friday 2(RM)</label>
                             <input type="text" class="form-control" id="inputMay" name="inputMay"
                                 placeholder="200.000" required>
                         </div>
@@ -509,10 +437,19 @@
                 var april = parseFloat(document.getElementById('inputApril').value.replace(/,/g, '')) || 0;
                 var may = parseFloat(document.getElementById('inputMay').value.replace(/,/g, '')) || 0;
 
+                const paymentValueElement = document.getElementById('payment_value');
+                const paymentPercentageElement = document.getElementById('payment_percentage');
+                const companyGrowth = document.getElementById('company_growth');
+                const profileReportValue = document.getElementById('profile_report_value');
+                const profileReportPercentage = document.getElementById('profile_report_percentage');
+                const mainProfit = document.getElementById('main_profit');
+
                 var growthFebruary = (february - january) / january;
                 var growthMarch = (march - february) / february;
                 var growthApril = (april - march) / march;
                 var growthMay = (may - april) / april;
+                var revenueUpMay = may - april;
+                var totalRevenue = january + february + march + april + may;
 
                 var averageGrowthRate = (growthFebruary + growthMarch + growthApril + growthMay) / 4;
 
@@ -520,6 +457,45 @@
                 var averageGrowthRateFixed = averageGrowthRate.toFixed(2);
 
                 console.log("Average Growth Rate: " + averageGrowthRateFixed + "%");
+
+                companyGrowth.textContent = `Company Growth ${averageGrowthRateFixed}`;
+                paymentValueElement.textContent = `RM ${revenueUpMay}`;
+                profileReportValue.textContent = `RM ${totalRevenue}`;
+                mainProfit.textContent = `${averageGrowthRateFixed}%`;
+
+                if (paymentPercentageElement) {
+                    const percentageValue = Math.abs(growthMay).toFixed(2);
+
+                    paymentPercentageElement.innerHTML = '';
+                    profileReportPercentage.innerHTML = '';
+
+                    const iconElement = document.createElement('i');
+                    iconElement.classList.add('bx', growthMay < 0 ? 'bx-down-arrow-alt' : 'bx-up-arrow-alt');
+
+                    if (growthMay > 0) {
+                        paymentPercentageElement.classList.add('text-success');
+                        profileReportPercentage.classList.add('text-success');
+
+                    } else if (growthMay < 0) {
+                        paymentPercentageElement.classList.add('text-danger');
+                        profileReportPercentage.classList.add('text-success');
+
+                    }
+
+                    if (growthMay > 0) {
+                        paymentPercentageElement.style.color = 'green';
+                        profileReportPercentage.style.color = 'green';
+
+                    }
+
+                    const percentageText = `${percentageValue}%`;
+                    const percentageProfileText = `${percentageValue}%`;
+
+                    paymentPercentageElement.appendChild(iconElement);
+                    paymentPercentageElement.appendChild(document.createTextNode(percentageText));
+                    profileReportPercentage.appendChild(iconElement);
+                    profileReportPercentage.appendChild(document.createTextNode(percentageText));
+                }
 
                 const totalRevenueChartEl = document.querySelector('#totalRevenueChart'),
                     totalRevenueChartOptions = {
@@ -581,7 +557,7 @@
                             }
                         },
                         xaxis: {
-                            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                            categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                             labels: {
                                 style: {
                                     fontSize: '13px',
