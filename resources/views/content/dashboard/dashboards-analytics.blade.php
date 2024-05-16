@@ -12,6 +12,8 @@
 
 @section('page-script')
     <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 @endsection
 
 @section('content')
@@ -22,8 +24,17 @@
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Hello, Nia Maimunah. Welcome to Fin X Plan Dashboard 🎉</h5>
-                            <p class="mb-4"> You have done <span id="main_profit" class="fw-medium">33%</span> more sales this week.</p>
+                            <h5 class="card-title text-primary">Hello, Nia Sdn. Bhd. Welcome to Fin X Plan Dashboard 🎉</h5>
+                            <p class="mb-4"> You have done <span id="main_profit" class="fw-medium">33%</span> more sales
+                                this week.</p>
+                            <div class="row mt-3">
+                                <div class="col-lg-12 mb-4 d-flex justify-content-center align-items-center">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#companyProfile">
+                                        Check Company Profile
+                                    </button>
+                                </div>
+                            </div>
 
                             {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a> --}}
                         </div>
@@ -38,6 +49,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- Total Revenue -->
         <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
             <div class="card">
@@ -92,6 +104,14 @@
                             </button>
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-12 mb-4 d-flex justify-content-center align-items-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#reminderBill">
+                                Show Reminder Bill
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,9 +144,11 @@
                         </div>
                     </div>
                 </div>
-  
+
+                
+
                 <!-- </div>
-                                                                            <div class="row"> -->
+                                                                                    <div class="row"> -->
                 <div class="col-12 mb-4">
                     <div class="card">
                         <div class="card-body">
@@ -137,8 +159,8 @@
                                         <span class="badge bg-label-warning rounded-pill">Year 2024</span>
                                     </div>
                                     <div class="mt-sm-auto">
-                                        <small id="profile_report_percentage"
-                                            class="text-success text-nowrap fw-medium"><i class='bx bx-chevron-up'></i>
+                                        <small id="profile_report_percentage" class="text-success text-nowrap fw-medium"><i
+                                                class='bx bx-chevron-up'></i>
                                             68.2%</small>
                                         <h3 id="profile_report_value" class="mb-0">RM 84,686k</h3>
                                     </div>
@@ -150,6 +172,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
     <div class="row">
         <!-- Order Statistics -->
@@ -415,8 +438,194 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="reminderBill" tabindex="-1" aria-labelledby="reminderBillLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reminderBillLabel">Reminder Bill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row top-buffer">
+                        <div class="col d-flex justify-content-center">
+                            <h2>May 2024</h2>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="col d-flex justify-content-center">
+                            <img src = "{{ asset('assets/img/old_assets/calendar.svg') }}" id="idClick"
+                                alt="Company Profile" />
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="col d-flex justify-content-center">
+                            <button type="button" id="idClick2"
+                                class="btn btn-warning rounded-xl">&nbsp;&nbsp;Check&nbsp;&nbsp;</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="companyProfile" tabindex="-1" aria-labelledby="companyProfileLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="companyProfileLabel">Company Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="companyProfileForm">
+                        <input type="hidden" name="id">
+                        <div class="bg-oren rounded-nav">
+                            <div class="container">
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <h2>Company Profile</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <!-- <div class="row top-buffer">
+                              <div class="col bg-kuning">
+                                  <p>< Back</p>
+                              </div>
+                          </div>    -->
+                            <div class="row top-buffer">
+                                <div class="col d-flex justify-content-start">
+                                    <p><b>Company Name</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-start">
+                                    <input type="text" class="form-control" id="name" name="name" required
+                                        value="Nia Sdn. Bhd." aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col d-flex justify-content-start">
+                                    <p><b>Company Number</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-start input-group flex-nowrap">
+                                    <span class="input-group-text" id="basic-addon1">C100-D-</span>
+                                    <input type="number" class="form-control" id="number" name="number" required
+                                        value="01" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col d-flex justify-content-start">
+                                    <p><b>Location</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-start">
+                                    <input type="text" class="form-control" id="location" name="location" required
+                                        value="Kuala Lumpur" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col d-flex justify-content-start">
+                                    <p><b>Number of Employee</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-start">
+                                    <input type="number" class="form-control" id="employee" name="employee" required
+                                        value="100" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col d-flex justify-content-start">
+                                    <p><b>Current Assets</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-start input-group flex-nowrap">
+                                    <span class="input-group-text" id="basic-addon1">RM</span>
+                                    <input type="number" class="form-control" id="assets" name="assets" required
+                                        value="500000" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col d-flex justify-content-start">
+                                    <button type="submit" name="submit"
+                                        class="btn btn-warning rounded-xl">&nbsp;&nbsp;Update&nbsp;&nbsp;</button>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </form>
+
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+          document.getElementById('companyProfileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            var companyName = document.getElementById('name').value;
+            var companyNumber = document.getElementById('number').value;
+            var location = document.getElementById('location').value;
+            var numberOfEmployees = document.getElementById('employee').value;
+            var currentAssets = document.getElementById('assets').value;
+            
+            // Create alert message
+            var message = "Company Name: " + companyName + "\n" +
+                          "Company Number: C100-D-" + companyNumber + "\n" +
+                          "Location: " + location + "\n" +
+                          "Number of Employees: " + numberOfEmployees + "\n" +
+                          "Current Assets: RM " + currentAssets;
+            
+            // Display alert
+            alert(message);
+            document.getElementById('name').placeholder = companyName;
+            document.getElementById('number').placeholder = companyNumber;
+            document.getElementById('location').placeholder = location;
+            document.getElementById('employee').placeholder = numberOfEmployees;
+            document.getElementById('assets').placeholder = currentAssets;
+
+        });
+
+            document.getElementById("idClick").addEventListener("click", function(e) {
+                // e.preventDefault();
+                var modalElement = document.getElementById('reminderBill');
+                var modal = bootstrap.Modal.getInstance(modalElement);
+                modal.hide();
+                swal.fire(
+                    'Information',
+                    'You have tax payments on 16 and 24 May coming up.',
+                    'success'
+                );
+
+            });
+
+            document.getElementById("idClick2").addEventListener("click", function(e) {
+                // e.preventDefault();
+                var modalElement = document.getElementById('reminderBill');
+                var modal = bootstrap.Modal.getInstance(modalElement);
+                modal.hide();
+                swal.fire(
+                    'Information',
+                    'You have tax payments on 16 and 24 May coming up.',
+                    'success'
+                );
+
+            });
+
             const form = document.getElementById('submitForm');
 
             let totalRevenueChart;
